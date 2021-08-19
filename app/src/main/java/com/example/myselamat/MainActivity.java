@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         vaccination = (CardView) findViewById(R.id.vaccination);
 
         //jiayi try comment
-
+        // ho
         sop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
