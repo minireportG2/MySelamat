@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
         hotspot = (CardView) findViewById(R.id.hotspot);
         history = (CardView) findViewById(R.id.history);
         vaccination = (CardView) findViewById(R.id.vaccination);
-
+        // hihi
         //jiayi try comment
-
+        // hoho
         sop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
