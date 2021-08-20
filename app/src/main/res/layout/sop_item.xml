@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="6dp"
+    android:elevation="6dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="1dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nametext"
+            android:text="State"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/soptext"
+            android:text="SOP"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/nametext"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/allowedtext"
+            android:text="Allowed"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/soptext"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timetext"
+            android:text="Time"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_below="@+id/allowedtext"
+            android:layout_marginLeft="10dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
