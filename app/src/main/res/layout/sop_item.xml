@@ -7,68 +7,121 @@
     android:elevation="6dp"
     app:cardUseCompatPadding="true">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/img1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerVertical="true"
-            android:src="@mipmap/ic_launcher"
-            app:civ_border_color="@color/black"
-            app:civ_border_width="1dp" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/nametext"
-            android:text="State"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_marginLeft="10dp"
-            />
+            android:orientation="horizontal">
 
-        <TextView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="1dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/soptext"
-            android:text="SOP"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/nametext"
-            android:layout_marginLeft="10dp"
-            />
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:id="@+id/nametext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/img1"
+                android:fontFamily="@font/amiko_bold"
+                android:text="State"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/allowedtext"
-            android:text="Allowed"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/soptext"
-            android:layout_marginLeft="10dp"
-            />
+            android:orientation="horizontal">
 
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="SOP:"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/amiko_bold"/>
+
+            <TextView
+                android:id="@+id/soptext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/droid_sans"
+                android:text="SOP"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allowed Activity:"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/amiko_bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/allowedtext"
+                android:text="Allowed"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/droid_sans"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/timetext"
-            android:text="Time"
-            android:textSize="25sp"
-            android:textColor="@color/black"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/allowedtext"
-            android:layout_marginLeft="10dp"
-            />
+            android:orientation="horizontal">
 
-    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outdoor Time:"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/amiko_bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/timetext"
+                android:text="Time"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@+id/img1"
+                android:layout_below="@+id/allowedtext"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/droid_sans"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

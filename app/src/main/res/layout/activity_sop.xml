@@ -14,18 +14,19 @@
         android:layout_marginLeft="5pt"
         android:layout_marginTop="15pt"
         android:layout_toRightOf="@+id/iv"
+        android:fontFamily="@font/amaranth_bold"
         android:text="SOP Module"
         android:textColor="@color/white"
         android:textSize="13pt"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/iv"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/ic_sop"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginLeft="10pt"
-        android:layout_marginTop="10pt"/>
+        android:layout_marginTop="10pt"
+        android:src="@drawable/ic_sop" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
