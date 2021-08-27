@@ -33,7 +33,7 @@ public class SopAdapter extends FirebaseRecyclerAdapter<SopModel, SopAdapter.myV
         holder.name.setText(model.getName());
         holder.sop.setText(model.getSop());
         holder.allowed.setText(model.getAllowed());
-        holder.time.setText(model.getTime());
+        holder.disallowed.setText(model.getDisallowed());
 
         Picasso.get().load(model.getSurl()).into(holder.img);
     }
@@ -48,7 +48,7 @@ public class SopAdapter extends FirebaseRecyclerAdapter<SopModel, SopAdapter.myV
     class myViewHolder extends RecyclerView.ViewHolder {
 
         CircleImageView img;
-        TextView name, sop, allowed, time;
+        TextView name, sop, allowed, disallowed;
 
 
         public myViewHolder(@NonNull View itemView) {
@@ -57,8 +57,8 @@ public class SopAdapter extends FirebaseRecyclerAdapter<SopModel, SopAdapter.myV
             img = (CircleImageView)itemView.findViewById(R.id.img1);
             name = (TextView) itemView.findViewById(R.id.nametext);
             sop = (TextView) itemView.findViewById(R.id.soptext);
-            allowed = (TextView) itemView.findViewById(R.id.allowedtext);
-            time = (TextView) itemView.findViewById(R.id.timetext);
+            allowed = (TextView) itemView.findViewById(R.id.allowed);
+            disallowed = (TextView) itemView.findViewById(R.id.disallowed);
         }
     }
 }

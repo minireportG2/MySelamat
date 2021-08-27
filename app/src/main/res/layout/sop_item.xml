@@ -86,22 +86,18 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/allowedtext"
+                android:id="@+id/allowed"
                 android:text="Allowed"
                 android:textSize="25sp"
                 android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/droid_sans"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Outdoor Time:"
+                android:text="Disallowed Activity:"
                 android:textSize="25sp"
                 android:textColor="@color/black"
                 android:layout_marginLeft="10dp"
@@ -111,8 +107,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/timetext"
-                android:text="Time"
+                android:id="@+id/disallowed"
+                android:text="Disallowed"
                 android:textSize="25sp"
                 android:textColor="@color/black"
                 android:layout_toRightOf="@+id/img1"
@@ -120,7 +116,6 @@
                 android:layout_marginLeft="10dp"
                 android:fontFamily="@font/droid_sans"/>
 
-        </LinearLayout>
 
     </LinearLayout>
 

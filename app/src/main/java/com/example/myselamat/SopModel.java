@@ -2,18 +2,18 @@ package com.example.myselamat;
 
 public class SopModel {
 
-    String name, sop, allowed, time, surl;
+    String name, sop, allowed, disallowed, surl;
 
     SopModel()
     {
 
     }
 
-    public SopModel(String name, String sop, String allowed, String time, String surl) {
+    public SopModel(String name, String sop, String allowed, String disallowed, String surl) {
         this.name = name;
         this.sop = sop;
         this.allowed = allowed;
-        this.time = time;
+        this.disallowed = disallowed;
         this.surl = surl;
     }
 
@@ -41,12 +41,11 @@ public class SopModel {
         this.allowed = allowed;
     }
 
-    public String getTime() {
-        return time;
+    public String getDisallowed() {
+        return disallowed;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setDisallowed(String disallowed) { this.disallowed = disallowed;
     }
 
     public String getSurl() {
