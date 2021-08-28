@@ -84,9 +84,9 @@ public class LoginActivity extends AppCompatActivity {
         }else if (!lEmail.matches(emailPattern)){
 
             email.setError("Invalid Email");
-        }else if (lPassword.isEmpty()){
+        }else if (lPassword.isEmpty() || lPassword.length()<6){
 
-            password.setError("Required");
+            password.setError("The Password Should Exceed 5 Characters");
         }else {
 
             progressDialog.setTitle("Login");
