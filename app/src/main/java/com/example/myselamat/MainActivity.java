@@ -6,11 +6,16 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
     CardView sop, hotspot, history, vaccination;
+    Button sign_out;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         hotspot = (CardView) findViewById(R.id.hotspot);
         history = (CardView) findViewById(R.id.history);
         vaccination = (CardView) findViewById(R.id.vaccination);
+        sign_out = (Button) findViewById(R.id.sign_out);
 
         sop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +62,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        sign_out.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mAuth = FirebaseAuth.getInstance();
+                mAuth.signOut();
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(intent);
+                Toast.makeText(MainActivity.this, "Sign Out Successful", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
+
 
     private void showToast(String message) {
 
