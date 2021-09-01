@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".covidstatusStartActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/cs_start"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/covidstatus" />
+
+        <TextView
+            android:id="@+id/cs_starttext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cs_start"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:text="COVID Status Test"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/cs_starttext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cs_starttext"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:text="Are you a Low Risk person who has:\n\n • Started exhibiting COVID-19 symptoms? \n • Travelled overseas, had contact with a\n    positive COVID-19 patient or attend any\n    mass gathering in the past 14 days?   "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/cs_starttext3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cs_starttext2"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="20dp"
+            android:text="If your answer is YES to any of the above, kindly\n update your health status. "
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/cs_startbutton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cs_starttext3"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Start"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
