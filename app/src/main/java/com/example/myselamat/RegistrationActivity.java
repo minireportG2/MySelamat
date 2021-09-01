@@ -17,28 +17,36 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    EditText register_email, register_password, confirm_password;
+    EditText register_email, register_password, confirm_password, name, ic;
     TextView back_login;
     Button register_button;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+
+
+
         register_email = (EditText) findViewById(R.id.register_email);
         register_password = (EditText) findViewById(R.id.register_password);
         confirm_password = (EditText) findViewById(R.id.confirm_password);
         back_login = (TextView) findViewById(R.id.back_login);
         register_button = (Button) findViewById(R.id.register_button);
+        name = (EditText) findViewById(R.id.register_name);
+        ic = (EditText) findViewById(R.id.register_ic);
+
 
         progressDialog = new ProgressDialog(this);
 
@@ -69,6 +77,7 @@ public class RegistrationActivity extends AppCompatActivity {
         String rPassword = register_password.getText().toString().trim();
         String rConfirmPassword = confirm_password.getText().toString().trim();
 
+
         if (rEmail.isEmpty()){
 
             register_email.setError("Required");
@@ -95,6 +104,15 @@ public class RegistrationActivity extends AppCompatActivity {
                     if (task.isSuccessful()){
 
                         progressDialog.dismiss();
+                        FirebaseUser firebaseUser= mAuth.getCurrentUser();
+
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                        reference.child(firebaseUser.getUid()).child("name").setValue(name.getText().toString().trim());
+                        reference.child(firebaseUser.getUid()).child("ic").setValue(ic.getText().toString().trim());
+                        reference.child(firebaseUser.getUid()).child("vaccine").child("registered").setValue("No");
+
+
+
                         sendUserToMainActivity();
                         Toast.makeText(RegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                     }else {

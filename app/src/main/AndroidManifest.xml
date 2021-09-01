@@ -13,6 +13,35 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MySelamat">
 
+        <activity
+            android:name=".UpdateVaccineActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterVaccineStatusActivity"
+            android:exported="true" />
+        <activity
+            android:name=".vaccineSuccessRegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".covidstatusStartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".covidstatusResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".covidstatusActivity"
+            android:exported="true" />
+        <activity
+            android:name=".vaccineEditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VaccineVerifyActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VaccineQuestionActivity"
+            android:exported="true" />
+
+
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDQ-1ICszlDtmB49Sn3eJH11vCX4PYzGX0"/>
 

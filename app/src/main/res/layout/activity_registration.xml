@@ -9,15 +9,17 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/registration_text"
-        app:lottie_rawRes="@raw/splash_lottie"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        app:lottie_autoPlay="true"/>
+        app:layout_constraintBottom_toTopOf="@+id/registration_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.178"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/splash_lottie" />
 
     <TextView
         android:id="@+id/mySelamat_text"
@@ -45,12 +47,42 @@
         app:layout_constraintTop_toBottomOf="@+id/mySelamat_text"/>
 
     <EditText
-        android:id="@+id/register_email"
+        android:id="@+id/register_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registration_text"
+        android:hint="Name"
+        android:background="@drawable/ed_background"
+        app:layout_constraintWidth_percent=".8"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/register_ic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_name"
+        android:hint="IC"
+        android:background="@drawable/ed_background"
+        app:layout_constraintWidth_percent=".8"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/register_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register_ic"
         android:hint="Email"
         android:background="@drawable/ed_background"
         app:layout_constraintWidth_percent=".8"
