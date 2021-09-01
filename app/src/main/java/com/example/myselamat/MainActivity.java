@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView sop, hotspot, history, vaccination;
+    CardView sop, nearby, history, vaccination,news;
     Button sign_out;
     FirebaseAuth mAuth;
 
@@ -23,9 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sop = (CardView) findViewById(R.id.sop);
-        hotspot = (CardView) findViewById(R.id.hotspot);
+        nearby = (CardView) findViewById(R.id.nearby);
         history = (CardView) findViewById(R.id.history);
         vaccination = (CardView) findViewById(R.id.vaccination);
+        news=(CardView)findViewById(R.id.news);
         sign_out = (Button) findViewById(R.id.sign_out);
 
         sop.setOnClickListener(new View.OnClickListener() {
@@ -38,11 +39,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        hotspot.setOnClickListener(new View.OnClickListener() {
+        nearby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                showToast("Hotspot Module Clicked");
+                showToast("Nearby Facility Module Clicked");
+                Intent intent = new Intent(MainActivity.this, NearbyActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -59,6 +62,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 showToast("Covid-19 Vaccination Module Clicked");
+            }
+        });
+
+        news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showToast("News Module Clicked");
+                Intent intent = new Intent(MainActivity.this, NewsActivity.class);
+                startActivity(intent);
             }
         });
 
