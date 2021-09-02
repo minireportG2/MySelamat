@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class RegisterVaccineStatusActivity extends AppCompatActivity {
     String currentuser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-    String name1,ic1, state1, postcode1, illness1, oku1, illness_a, illness_b, illness_c, illness_d, illness_e, illness_f, illness_total,datefirstdose1, dateseconddose1,psw,firstdosestatus1, seconddosestatus1;
+    String name1, ic1, state1, postcode1, illness1, oku1, illness_a, illness_b, illness_c, illness_d, illness_e, illness_f, illness_total, datefirstdose1, dateseconddose1, psw, firstdosestatus1, seconddosestatus1;
     TextView name, ic, state, postcode, illness, oku, datefirstdose, dateseconddose, firstdosestatus, seconddosestatus;
     Button updatebutton, firstdosecomplete, seconddosecomplete, firstdoseconfirm, seconddoseconfirm, screening;
     EditText firstdosepsw, seconddosepsw;
@@ -32,24 +32,24 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_vaccine_status);
 
-        name=(TextView)findViewById(R.id.rs_name);
-        ic=(TextView)findViewById(R.id.rs_ic);
-        state=(TextView)findViewById(R.id.rs_state);
-        postcode=(TextView)findViewById(R.id.rs_postcode);
-        illness=(TextView)findViewById(R.id.rs_illness);
-        oku=(TextView)findViewById(R.id.rs_oku);
-        updatebutton=(Button) findViewById(R.id.rs_updatebutton);
+        name = (TextView) findViewById(R.id.rs_name);
+        ic = (TextView) findViewById(R.id.rs_ic);
+        state = (TextView) findViewById(R.id.rs_state);
+        postcode = (TextView) findViewById(R.id.rs_postcode);
+        illness = (TextView) findViewById(R.id.rs_illness);
+        oku = (TextView) findViewById(R.id.rs_oku);
+        updatebutton = (Button) findViewById(R.id.rs_updatebutton);
         datefirstdose = (TextView) findViewById((R.id.rs_firstdose));
-        dateseconddose=(TextView) findViewById(R.id.rs_seconddose);
+        dateseconddose = (TextView) findViewById(R.id.rs_seconddose);
         firstdosecomplete = (Button) findViewById(R.id.rs_firstdose_completebutton);
         seconddosecomplete = (Button) findViewById(R.id.rs_seconddose_completebutton);
-        firstdosepsw = (EditText)findViewById(R.id.rs_firstdose_psw);
-        seconddosepsw = (EditText)findViewById(R.id.rs_seconddose_psw);
-        firstdoseconfirm = (Button)findViewById(R.id.rs_firstdose_confirmbutton);
-        seconddoseconfirm=(Button)findViewById(R.id.rs_seconddose_confirmbutton);
-        firstdosestatus = (TextView)findViewById(R.id.rs_firstdose_status);
-        seconddosestatus=(TextView)findViewById(R.id.rs_seconddose_status);
-        screening=(Button)findViewById(R.id.rs_screening);
+        firstdosepsw = (EditText) findViewById(R.id.rs_firstdose_psw);
+        seconddosepsw = (EditText) findViewById(R.id.rs_seconddose_psw);
+        firstdoseconfirm = (Button) findViewById(R.id.rs_firstdose_confirmbutton);
+        seconddoseconfirm = (Button) findViewById(R.id.rs_seconddose_confirmbutton);
+        firstdosestatus = (TextView) findViewById(R.id.rs_firstdose_status);
+        seconddosestatus = (TextView) findViewById(R.id.rs_seconddose_status);
+        screening = (Button) findViewById(R.id.rs_screening);
 
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -64,15 +64,15 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                 state1 = snapshot.child(currentuser).child("state").getValue(String.class);
                 postcode1 = snapshot.child(currentuser).child("postcode").getValue(String.class);
                 oku1 = snapshot.child(currentuser).child("vaccine").child("OKU").getValue(String.class);
-                datefirstdose1 =  snapshot.child(currentuser).child("vaccine").child("firstdose").getValue(String.class);
-                dateseconddose1 =  snapshot.child(currentuser).child("vaccine").child("seconddose").getValue(String.class);
+                datefirstdose1 = snapshot.child(currentuser).child("vaccine").child("firstdose").getValue(String.class);
+                dateseconddose1 = snapshot.child(currentuser).child("vaccine").child("seconddose").getValue(String.class);
                 firstdosestatus1 = snapshot.child(currentuser).child("vaccine").child("firstdosestatus").getValue(String.class);
                 seconddosestatus1 = snapshot.child(currentuser).child("vaccine").child("seconddosestatus").getValue(String.class);
 
                 illness1 = snapshot.child(currentuser).child("vaccine").child("illness").getValue(String.class);
-                if(illness1.equals("No illness or allergies")){
+                if (illness1.equals("No illness or allergies")) {
                     illness.setText(illness1);
-                }else{
+                } else {
                     illness_a = snapshot.child(currentuser).child("vaccine").child("Diabetes").getValue(String.class);
                     illness_b = snapshot.child(currentuser).child("vaccine").child("Hypertension").getValue(String.class);
                     illness_c = snapshot.child(currentuser).child("vaccine").child("Heart disease").getValue(String.class);
@@ -80,23 +80,23 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                     illness_e = snapshot.child(currentuser).child("vaccine").child("Stroke").getValue(String.class);
                     illness_f = snapshot.child(currentuser).child("vaccine").child("Lung Disease").getValue(String.class);
 
-                    if(!illness_a.equals("No")){
-                        illness_total= illness_a;
+                    if (!illness_a.equals("No")) {
+                        illness_total = illness_a;
                     }
-                    if(!illness_b.equals("No")){
-                        illness_total= illness_total+'\n'+illness_b;
+                    if (!illness_b.equals("No")) {
+                        illness_total = illness_total + '\n' + illness_b;
                     }
-                    if(!illness_c.equals("No")){
-                        illness_total= illness_total+'\n'+illness_c;
+                    if (!illness_c.equals("No")) {
+                        illness_total = illness_total + '\n' + illness_c;
                     }
-                    if(!illness_d.equals("No")){
-                        illness_total= illness_total+'\n'+illness_d;
+                    if (!illness_d.equals("No")) {
+                        illness_total = illness_total + '\n' + illness_d;
                     }
-                    if(!illness_e.equals("No")){
-                        illness_total= illness_total+'\n'+illness_e;
+                    if (!illness_e.equals("No")) {
+                        illness_total = illness_total + '\n' + illness_e;
                     }
-                    if(!illness_f.equals("No")){
-                        illness_total= illness_total+'\n'+illness_f;
+                    if (!illness_f.equals("No")) {
+                        illness_total = illness_total + '\n' + illness_f;
                     }
                     illness.setText(illness_total);
                 }
@@ -112,6 +112,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                 firstdosestatus.setText(firstdosestatus1);
                 seconddosestatus.setText(seconddosestatus1);
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(RegisterVaccineStatusActivity.this, "Fail to retrieve information", Toast.LENGTH_SHORT).show();
@@ -125,6 +126,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                 psw = snapshot.child("psw").getValue(String.class);
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(RegisterVaccineStatusActivity.this, "Fail to retrieve information", Toast.LENGTH_SHORT).show();
@@ -158,7 +160,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
 
                 if (linear4.getVisibility() == View.GONE) {
                     linear4.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     linear4.setVisibility(View.GONE);
                 }
             }
@@ -172,7 +174,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
 
                 if (linear6.getVisibility() == View.GONE) {
                     linear6.setVisibility(View.VISIBLE);
-                }else{
+                } else {
                     linear6.setVisibility(View.GONE);
                 }
             }
@@ -181,12 +183,15 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
         firstdoseconfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                LinearLayout linear4 = (LinearLayout) findViewById(R.id.linear4);
 
                 if (psw.equals(firstdosepsw.getText().toString())) {
-                   reference.child(currentuser).child("vaccine").child("firstdosestatus").setValue("Complete");
-                   firstdosestatus.setText("Complete");
+                    Toast.makeText(RegisterVaccineStatusActivity.this, "First dose completed", Toast.LENGTH_SHORT).show();
+                    reference.child(currentuser).child("vaccine").child("firstdosestatus").setValue("Complete");
+                    firstdosestatus.setText("Complete");
+                    linear4.setVisibility(View.GONE);
 
-                }else{
+                } else {
                     Toast.makeText(RegisterVaccineStatusActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
                 }
 
@@ -197,19 +202,20 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (psw.equals(firstdosepsw.getText().toString())) {
+                LinearLayout linear6 = (LinearLayout) findViewById(R.id.linear6);
+
+                if (psw.equals(seconddosepsw.getText().toString())) {
+                    Toast.makeText(RegisterVaccineStatusActivity.this, "Second dose completed", Toast.LENGTH_SHORT).show();
                     reference.child(currentuser).child("vaccine").child("seconddosestatus").setValue("Complete");
                     seconddosestatus.setText("Complete");
+                    linear6.setVisibility(View.GONE);
 
-                }else{
+                } else {
                     Toast.makeText(RegisterVaccineStatusActivity.this, "Wrong password", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
-
-
-
 
 
     }

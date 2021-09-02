@@ -214,6 +214,8 @@ public class UpdateVaccineActivity extends AppCompatActivity {
             //registered
             reference.child(currentuser).child("vaccine").child("registered").setValue("Yes");
 
+            Toast.makeText(UpdateVaccineActivity.this, "Information Updated", Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(UpdateVaccineActivity.this, RegisterVaccineStatusActivity.class);
             startActivity(intent);
 
