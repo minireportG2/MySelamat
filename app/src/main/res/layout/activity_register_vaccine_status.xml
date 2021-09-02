@@ -300,6 +300,7 @@
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/fresca"
                         android:text="Incomplete"
+                        android:textColor="@color/orange"
                         android:textSize="20sp"
                         android:textStyle="italic" />
                 </LinearLayout>
@@ -424,6 +425,7 @@
                         android:layout_marginTop="20dp"
                         android:fontFamily="@font/fresca"
                         android:text="Incomplete"
+                        android:textColor="@color/orange"
                         android:textSize="20sp"
                         android:textStyle="italic" />
                 </LinearLayout>

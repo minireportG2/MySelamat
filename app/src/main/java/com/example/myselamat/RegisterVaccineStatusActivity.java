@@ -110,7 +110,13 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                 datefirstdose.setText(datefirstdose1);
                 dateseconddose.setText(dateseconddose1);
                 firstdosestatus.setText(firstdosestatus1);
+                if(firstdosestatus1.equals("Complete")){
+                    firstdosestatus.setTextColor(getResources().getColor(R.color.green));
+                }
                 seconddosestatus.setText(seconddosestatus1);
+                if(seconddosestatus1.equals("Complete")){
+                    seconddosestatus.setTextColor(getResources().getColor(R.color.green));
+                }
             }
 
             @Override
@@ -189,6 +195,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                     Toast.makeText(RegisterVaccineStatusActivity.this, "First dose completed", Toast.LENGTH_SHORT).show();
                     reference.child(currentuser).child("vaccine").child("firstdosestatus").setValue("Complete");
                     firstdosestatus.setText("Complete");
+                    firstdosestatus.setTextColor(getResources().getColor(R.color.green));
                     linear4.setVisibility(View.GONE);
 
                 } else {
@@ -208,6 +215,7 @@ public class RegisterVaccineStatusActivity extends AppCompatActivity {
                     Toast.makeText(RegisterVaccineStatusActivity.this, "Second dose completed", Toast.LENGTH_SHORT).show();
                     reference.child(currentuser).child("vaccine").child("seconddosestatus").setValue("Complete");
                     seconddosestatus.setText("Complete");
+                    seconddosestatus.setTextColor(getResources().getColor(R.color.green));
                     linear6.setVisibility(View.GONE);
 
                 } else {
